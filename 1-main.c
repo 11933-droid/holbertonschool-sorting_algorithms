@@ -1,10 +1,10 @@
-        tmp = (int *)&node->n;
-        *tmp = array[size];
-        node->next = list;
-        node->prev = NULL;
-        list = node;
-        if (list->next)
-            list->next->prev = list;
+	tmp = (int *)&node->n;
+	*tmp = array[size];
+	node->next = list;
+	node->prev = NULL;
+	list = node;
+	if (list->next)
+	    list->next->prev = list;
     }
     return (list);
 }
@@ -15,7 +15,7 @@ int main(void)
     size_t n = sizeof(array) / sizeof(array[0]);
     list = create_listint(array, n);
     if (!list)
-        return (1);
+	return (1);
     print_list(list);
     printf("\n");
     insertion_sort_list(&list);
